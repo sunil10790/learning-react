@@ -1,4 +1,4 @@
 ReactDOM.render(
-    React.createElement('h1', null, 'Hello React baba'),
+    <h1>I am in love with my coco</h1>,
     document.getElementById('react-container')
 )
