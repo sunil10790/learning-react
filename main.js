@@ -1,16 +1,34 @@
-// class Coco extends React.Component {
-//     render() {
-//         return (
-//             <h1 className="coco">I am in love with {this.props.amount}mg of my {this.props.product}</h1>
-//         )
-//     }
-// }
+class Checkbox extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            checked: true
+        }
+        this.toggleCheckbox = this.toggleCheckbox.bind(this);
+    }
 
-const Coco = ({product}) => (
-    <h1 className="coco">I am in love with my {product}</h1>
-)
+    toggleCheckbox() {
+        this.setState({
+            checked: !this.state.checked
+        })
+    }
+
+    render() {
+        var msg = this.state.checked ? "Checked" : "Not checked";
+        return (
+            <div>
+                <input type="checkbox" onChange={this.toggleCheckbox} defaultChecked={this.state.checked}/>
+                <p>The checkbox is {msg}</p>
+            </div>
+        )
+    }
+}
+
+// const Coco = ({product}) => (
+//     <h1 className="coco">I am in love with my {product}</h1>
+// )
 
 ReactDOM.render(
-    <Coco product="coco" amount={16}/>,
+    <Checkbox />,
     document.getElementById('react-container')
 )
