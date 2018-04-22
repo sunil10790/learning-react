@@ -6,8 +6,8 @@
 //     }
 // }
 
-const Coco = (props) => (
-    <h1 className="coco">I am in love with my {props.product}</h1>
+const Coco = ({product}) => (
+    <h1 className="coco">I am in love with my {product}</h1>
 )
 
 ReactDOM.render(
